@@ -1,0 +1,49 @@
+
+#server:
+#  port: 8081
+#spring:
+#  application:
+#    name: Project1
+#  datasource:
+#    driverClassName: org.postgresql.Driver
+#    url: jdbc:postgresql://localhost:5432/Project1
+#    username: Project1
+#    password: 7898
+#  jpa:
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.PostgreSQL92Dialect
+#        format_sql: true
+#    show-sql: true
+
+
+
+server:
+  port: 8081
+spring:
+  application:
+    name: Project1
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/Project1
+    username: Project1
+    password: 7898
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL92Dialect
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+upload:
+  server:
+    folder: C:\Users\NURMUHAMMAD\IdeaProjects\upload
+
+api:
+  jsonplaceholder: https://jsonplaceholder.typicode.com/
+
+jwt:
+  token:
+    secret: jwtproject
+    validity: 86400000
