@@ -16,7 +16,7 @@ public class JwtProvider {
     @Value("${jwt.token.validity}")
     private String validityMilliSecound;
 
-    public String createToken(String username, Set<Role> roles){
-
-    }
+//    public String createToken(String username, Set<Role> roles){
+//
+//    }
 }
