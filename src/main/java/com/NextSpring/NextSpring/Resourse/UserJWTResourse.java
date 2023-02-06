@@ -2,6 +2,8 @@ package com.NextSpring.NextSpring.Resourse;
 
 import com.NextSpring.NextSpring.Resourse.VueModem.LoginVM;
 import com.NextSpring.NextSpring.Secret.JwtProvider;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -33,20 +35,33 @@ public class UserJWTResourse {
                 new UsernamePasswordAuthenticationToken(loginVM.getLogin(), loginVM.getPassword());
 
         Authentication authentication = authenticationManagerBuilder.getObject().authenticate(authenticationToken);
-
         /*
 
          tepadagi ikkalsini maqsadi foydalanuvchi ma'lumotlar bazasida bor yoki yo'qligini tekshiradi
 
         */
-
         SecurityContextHolder.getContext().setAuthentication(authentication);
-
         String jwt = jwtProvider.createToken(loginVM.getLogin(), authentication);
-
-        return ResponseEntity.ok(jwt);
-
-
-
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Authorization", "Beareer " + jwt);
+        return new ResponseEntity(new JWTTokin(jwt), headers, HttpStatus.OK);
     }
+
+    static class JWTTokin{
+        private String isTokin;
+
+        public JWTTokin(String isTokin) {
+            this.isTokin = isTokin;
+        }
+
+        public String getIsTokin() {
+            return isTokin;
+        }
+
+        public void setIsTokin(String isTokin) {
+            this.isTokin = isTokin;
+        }
+    }
+
+
 }
