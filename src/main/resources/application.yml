@@ -36,6 +36,11 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+  servlet:
+    multipart:
+      max-file-size: 200MB
+      max-request-size: 200MB
+      enabled: true
 upload:
   server:
     folder: C:\Users\NURMUHAMMAD\IdeaProjects\upload

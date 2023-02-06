@@ -24,7 +24,7 @@ public class JwtProvider {
     private String secret;
 
     @Value("${jwt.token.validity}")
-    private String validityMilliSecound;
+    private Long validityMilliSecound;
 
     @PostConstruct
     protected void init(){

@@ -36,14 +36,7 @@ public class UserJWTResourse {
 
         /*
 
-        UsernamePasswordAuthenticationToken authenticationToken =
-                new UsernamePasswordAuthenticationToken(loginVM.getLogin(), loginVM.getPassword());
-
-        Authentication authentication = authenticationManagerBuilder.getObject().authenticate(authenticationToken);
-
          tepadagi ikkalsini maqsadi foydalanuvchi ma'lumotlar bazasida bor yoki yo'qligini tekshiradi
-
-
 
         */
 
